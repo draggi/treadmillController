@@ -44,8 +44,9 @@ namespace TreadmillController
               get { return registered; }
           }
 
-
-          public TreadmillControllerForm()
+          //For timer tick
+          private int _ticks;
+        public TreadmillControllerForm()
         {
             InitializeComponent();
               // For detecting hotkey
@@ -97,6 +98,8 @@ namespace TreadmillController
             //label3.Text=ReturnRatioForSelectedMphSpeed(value).ToString();
             port.Write(ReturnRatioForSelectedMphSpeed(value));
             port.Write("\n");
+            //start timer:
+            timer1.Start();
             read = port.ReadLine();
             MphInfo.Text = ReturnTrueSpeed(value,"mph");
             KmInfo.Text = ReturnTrueSpeed(value, "km");
@@ -109,6 +112,10 @@ namespace TreadmillController
             port.Open();
             port.Write("\n");
             port.Write("1");
+            
+            //Stop the timer:
+            timer1.Stop();
+
             trackBar1.Value = 8;
             MphInfo.Text = "0";
             KmInfo.Text = "0";
@@ -192,6 +199,12 @@ namespace TreadmillController
             if (haveXp)
                 registered = WTSRegisterSessionNotification(Handle, NotifyForThisSession);            
             return;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            _ticks++;
+            this.Text = _ticks.ToString();
         }
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MphInfo = new System.Windows.Forms.Label();
@@ -35,9 +36,10 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.Stop = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label3 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,14 +120,6 @@
             this.shapeContainer1.TabIndex = 18;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 67;
-            this.lineShape1.X2 = 375;
-            this.lineShape1.Y1 = 87;
-            this.lineShape1.Y2 = 87;
-            // 
             // lineShape2
             // 
             this.lineShape2.Name = "lineShape2";
@@ -133,6 +127,14 @@
             this.lineShape2.X2 = 217;
             this.lineShape2.Y1 = 23;
             this.lineShape2.Y2 = 87;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 67;
+            this.lineShape1.X2 = 375;
+            this.lineShape1.Y1 = 87;
+            this.lineShape1.Y2 = 87;
             // 
             // label3
             // 
@@ -142,6 +144,12 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "label3";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // TreadmillControllerForm
             // 
@@ -176,6 +184,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
