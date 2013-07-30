@@ -81,7 +81,7 @@ namespace TreadmillController
             //label3.Text = "" + (trackBar1.Value.ToString());
             SendSpeedToTreadmill((trackBar1.Value*0.2).ToString());
 
-            if (trackBar1.Value <= 8) timer1.Stop();
+            if (trackBar1.Value <= 8) { timer1.Stop(); WriteStatsInXmlFile(); }
         }
         private string ReturnRatioForSelectedMphSpeed(string mph)
         {
@@ -265,6 +265,7 @@ namespace TreadmillController
                 rootElement.AppendChild(fileElement);
                 doc.Save("statistics.xml");
             }
+            _ticks = 0;
         }
     }
 }
