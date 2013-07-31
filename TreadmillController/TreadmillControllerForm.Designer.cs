@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TreadmillControllerForm));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MphInfo = new System.Windows.Forms.Label();
@@ -164,6 +165,7 @@
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.Stop);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TreadmillControllerForm";
             this.Text = "Treadmill Controller";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
