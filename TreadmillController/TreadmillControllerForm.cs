@@ -1,14 +1,6 @@
-﻿using LockMonitor;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.IO.Ports;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TreadmillController
@@ -52,7 +44,7 @@ namespace TreadmillController
               // For detecting hotkey
 
             // Set up the TrackBar.            
-            trackBar1.Scroll += new System.EventHandler(trackBar1_Scroll);
+            trackBar1.Scroll += new EventHandler(trackBar1_Scroll);
             trackBar1.Minimum = 8;
             trackBar1.Maximum = 30;
             trackBar1.TickFrequency = 2;
@@ -69,7 +61,7 @@ namespace TreadmillController
             port.ReadBufferSize = 100;
         }
 
-        private void Form1_Closing(object sender, System.EventArgs e)
+        private void Form1_Closing(object sender, EventArgs e)
         {      
         }
 
